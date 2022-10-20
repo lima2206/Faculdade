@@ -1,0 +1,38 @@
+
+
+.main_img{
+    width: 900px;
+    height: 414px;
+    margin: auto;
+    position: relative; bottom: 1px;
+}
+
+.logo{
+
+    width: 213px;
+    height: 57px;
+    margin: min(24px) 0 0 15%
+
+}
+
+.botões{
+    width: 210px;
+    height: 25px;
+    margin: 0 max(18%) 0 min(72%);
+    position: relative;
+    bottom: 35px;
+    right: 35px;
+}
+
+.texto{
+    margin:0 15%;
+}
+
+.centro{
+    margin:auto;
+    width: 200px
+}
+
+.barra{
+    width: 70%;
+}
