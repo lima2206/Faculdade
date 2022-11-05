@@ -92,7 +92,11 @@ def cat_dog(s):
 # count_code('cozexxcope') -> 2
 
 def count_code(s):
-    return
+    cont = 0
+    for k in range(len(s)-3):
+        if s[k:k+2] == 'co' and s[k+3] == 'e':
+            cont += 1
+    return cont
 
 
 # H. end_other #
@@ -104,13 +108,9 @@ def count_code(s):
 # end_other('abc', 'abXabc') -> True
 
 def end_other(a, b):
-    a.lower()
-    b.lower()
-    if b[-(len(a)):] == a:
-        return True
-    if a[-(len(b)):] == b:
-        return True
-    return False
+    a = a.lower()
+    b = b.lower()
+    return a.endswith(b) or b.endswith(a)
 
 
 # I. count_evens
@@ -120,7 +120,7 @@ def end_other(a, b):
 # count_evens([1, 3, 5]) -> 0
 
 def count_evens(nums):
-    return
+    return len([x for x in nums if x % 2 == 0])
 
 
 # J. sum13 #
@@ -132,17 +132,19 @@ def count_evens(nums):
 # sum13([13, 1, 2, 3, 4]) -> 0
 
 def sum13(nums):
-    return
+    if 13 in nums:
+        return sum(nums[:nums.index(13)])
+    return sum(nums)
 
+    # K. has22 #
+    # Verifica se na lista de números inteiros aparecem dois 2 consecutivos
+    # has22([1, 2, 2]) -> True
+    # has22([1, 2, 1, 2]) -> False
+    # has22([2, 1, 2]) -> False
 
-# K. has22 #
-# Verifica se na lista de números inteiros aparecem dois 2 consecutivos
-# has22([1, 2, 2]) -> True
-# has22([1, 2, 1, 2]) -> False
-# has22([2, 1, 2]) -> False
 
 def has22(nums):
-    return
+    return '2, 2' in str(nums)
 
 
 # L. soma_na_lista #
@@ -155,7 +157,7 @@ def has22(nums):
 # soma_na_lista(4, [2, 2, 1, 3]) -> True
 
 def soma_na_lista(n, lista):
-    return
+    return n in [x + y for x in lista for y in lista if x != y]
 
 
 # M.Difícil: Fila de tijolos sem usar loops #
@@ -168,7 +170,7 @@ def soma_na_lista(n, lista):
 # fila_tijolos(3, 2, 10) -> True
 
 def fila_tijolos(n_peq, n_gra, meta):
-    return
+    return n_peq >= meta % 5 and n_peq + 5 * n_gra >= meta
 
 
 # Provided simple test() function used in main() to print
