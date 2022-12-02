@@ -1,0 +1,61 @@
+01:
+n1 = int(input('Digite um número: '))
+n2 = int(input('Digite outro número: '))
+print(f'A soma entre {n1} e {n2} é {n1 + n2}.')
+print('FIM')
+
+02:
+d = int(input('Insira a distância em METROS: '))
+conv = (d * 1000)
+print(f'Seu valor de {d} metros se torna {conv} milímetros.')
+
+03:
+dia = int(input('Digite a quantidade de dias: ')) * 86400
+hora = int(input('Agora de horas: ')) * 3600
+min = int(input('Minutos: ')) * 60
+seg = int(input('Segundos: '))
+segundos = dia + hora + min + seg
+print(f'Calculando tudo você tem {segundos} segundos!')
+
+04:
+sal = float(input('Digite o salário: '))
+porc = int(input('Digite a porcentagem à aumentar: '))
+aum = sal + (sal * (porc/100))
+print(f'O salário de R${sal:.2f} com um aumento de {porc}% fica em R${aum:.2f}.')
+
+05:
+preço = float(input('Digite o valor da mercadoria: '))
+desc = int(input('Digite a porcentagem de desconto: '))
+valor = preço - (preço * (desc/100))
+print(f'O produto de R${preço:.2f} com {desc}% de desconto fica R${valor:.2f}.')
+
+06:
+d = int(input('Digite a distância a percorrer em KM: '))
+vm = int(input('Digite a velocidade média da viagem: '))
+t = int((d / vm) * 60)
+print(f'Na distância de {d} KM a uma velocidade de {vm} Km/h se espera um tempo aproximado de {t} minutos.')
+
+07:
+c = int(input('Digite a temperatura em °C: '))
+f = (9 * (c/5)) + 32
+print(f'A temperatura de {c}° Celsius fica {int(f)}° Fahrenheit.')
+
+08:
+f = float(input('Digite a temperatura em °F: '))
+c = (f - 32)/1.8
+print(f'A temperatura em {f}° Fahrenheit fica {int(c)}° Celsius. ')
+
+09:
+dist = int(input('Qual a distância que foi percorrida em KM: ')) * 0.15
+dia = int(input('Por quantos dias foi usado o carro: ')) * 60
+print(f'O valor total do aluguel foi R${dist + dia:.2f}.')
+
+10:
+cig = int(input('Quantos cigarros você fuma por dia? '))
+ano = int(input('Por quantos anos você já fumou? '))
+vida = (((cig * 360) * ano) * 10) / 1440
+print(f'Como você fumou {cig} cigarros por dia em {ano} anos, você perdeu {vida} dias de vida')
+
+11:
+calc = len(str(2 ** 1000000))
+print(f'2 elevado a um milhão tem {calc} dígitos!')
