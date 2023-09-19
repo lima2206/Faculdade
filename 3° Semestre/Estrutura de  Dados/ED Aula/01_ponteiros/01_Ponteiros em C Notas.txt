@@ -1,0 +1,57 @@
+Resumo da aula anterior
+
+Em Python tudo são ponteiros (variáveis por referência), mas como isso funciona "debaixo do pano":
+Ponteiros são variáveis que acessam regiões da memória ou outras variáveis de "forma remota"
+
+Regras:
+1. Ponteiro e coisa apontada são diferentes
+2. Não tem sentido usar um ponteiro que não aponta para nada
+Usos:
+1. comum: acessar variáveis locais fora do meu escopo, só consigo mudar uma variável local através de ponteiros
+(passagem por referência)
+2. fazer alocação dinâmica de vetores
+Vetores em C tem Dados contíguos, um do lado do outro. Isto tem vantagens, como mover grandes massas de dados em
+Computação Gráfica. A maior desvantagem é inserir ou remover no início do vetor. Preciso mover todo mundo.
+Resolvemos esse problema usando ponteiros, implementando uma Estrutura de Dados chamada Lista Ligada, ou Lista 
+Encadeada.
+
+struc cell {
+    int conteudo;
+    struct cell *seg; ponteiro para o seguinte
+}
+Como C é baixo nível veremos muitos detalhes de otimização. "Programar em C é como dançar num salão bem encerado, 
+com um monte de facas na mão".
+
+Para inserir é melhor inserir no começo
+Se eu inserir no final, toda vez preciso andar até o final para colocar o próximo lá
+Consequência disso, se eu quiser uma lista com 1 2 3, preciso colocar 3 2 1
+
+Cod. Lista ligada com cabeça sem alocação dinâmica
+Crio variáveis a, b e c nada mais faço do que ligar a b e c, com 3 5 e 10 de conteúdo
+Problema: se eu tiver muitos dados, não tem sentido declarar em C várias variáveis célula
+
+cod. Lista Ligada com cabeça com alocação dinâmica
+Alocação dinâmica -> pegar da memória sem declarar variável
+Na função insere, cada novo início, aponta para o início anterior
+Por isso que insiro ao contrário
+
+Lista Ligada cria lista com cabeça
+!! O que é a cabeça:
+    Cabeça serve em primeiro lugar para nunca mais ter que perguntar se a lista está vazia
+    E na grande maioria das vezes, a lista não está vazia, então seria uma pergunta inútil
+
+
+Lista Ligada cria Lista SEM cabeça
+Se eu não tiver cabeça, terei que perguntar se a lista é vazia
+Além disso, lst é um ponteiro, variável local da função main, para alterar, no caso da lista vazia,
+preciso passar ponteiro para ponteiros
+
+Então para que serve a cabeça:
+1. Para não ficar perguntando se a lista está vazia, isso deixa o código mais eficiente
+2. Para não utilizar ponteiro para ponteiros, isso complica o código e dificulta a manutenção
+
+Lista ligada vetor para lista
+Inserir do final para o inicio
+
+Lista ligada libera
+Preciso salvar o seguinte, antes de devolver o atual para a memória, senão perco a referência

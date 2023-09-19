@@ -1,0 +1,75 @@
+Sintaxe de ponteiros em C
+int k;
+int *p;
+
+p = &k;
+*p = 42;
+printf (k);
+
+int *p define uma variável que aponta para inteiros
+p = &k p aponta para o objeto k
+*p = 42 mudo o conteúdo de k para 42 por ponteiros
+Acima eu consigo mudar k para 42, saída da impressão
+
+1 Ponteiro e coisa apontada são coisas diferentes, não esqueça de definir a coisa apontada
+2 Você pode acessar o espaço da memoria pelo ponteiro, Não tem sentido ponteiro que não aponta para nada
+3 Você pode referenciar um ponteiro com outro
+    int* x;
+    int* y;
+
+    x = malloc(sizeof(int));
+
+=========================================================================
+
+Sintaxe de ponteiros em C
+int k;
+int *p;
+int *p2;
+
+p = &k;
+p2 = &k
+
+*p = 42;
+*p = 13;
+printf(k);
+
+// A última coisa feita é mudar a região k para 13
+
+
+int* x;
+int* y;
+
+x = malloc(sizeof(int));
+*x = 42;
+*y = 13;
+// y não está apontando para nenhum lugar
+// foi definido y mas não apontou para nenhum lugar
+y = x;
+// y aponta para o mesmo espaço na memória que y
+
+=========================================================================
+
+int *v;
+Em C o comando acima pode ser duas coisas:
+1. Um ponteiro para um único inteiros
+2. Um vetor v de alocação dinâmica, vetor significa vários inteiros, cujo número ficarei sabendo em tempo de execução
+
+Em C consigo definir um tamanho do vetor em tempo de execução usando 'int *v'
+
+=========================================================================
+
+Qual a função mais importante para ponteiros na nossa disciplina:
+Em primeiro lugar vetores em C são diferentes das listas do Python. Cada elemento é grudado um do lado do outro!!
+Dizemos que são posições contíguas.
+Existe uma vantagem quando dados são contíguos, que é a rápida movimentação de grandes blocos de dados, por exemplo sprites num
+jogo(computação gráfica).(
+Porém uma grande desvantagem é inserir ou remover dados, principalmente no início do vetor, tem que mover todos os dados
+que estão a direita do dado inserido.
+    você pode resolver isso isso usando ponteiros :)
+Monto uma estrutura de dados com dois elementos:
+conteúdo e ponteiro para o seguinte!
+Isso é parecido com Caça ao Tesouro, tenho um local fixo, e uma pista que aponta para o próximo local
+struct cell{
+    int conteudo;
+    struct cell *seg; apontador para o seguinte
+}

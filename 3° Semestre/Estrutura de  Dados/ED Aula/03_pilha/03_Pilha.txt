@@ -1,0 +1,40 @@
+Aula passada foi fila
+
+PILHA
+o ultimo que entra é o primeiro que sai
+    LIFO = Last In First Out
+p = []
+p.append(x) # coloca x no fim da lista = empilhar
+p.pop() # tira o último da lista = desempilhar
+
+Esse tipo de estrutura de daados é importante quando temos que analisar o último sempre
+Por exemplo: transformar decimal em binário
+    Dividir por 2 recursivamente e pegar os restos ao contrário.
+
+===========================================================================
+
+Vamos verificar se uma expressão é BEM FORMADA ou não
+A expressão tem parênteses e chaves
+
+({})(){} # Bem formada
+
+({)} # Não é bem formada
+
+Imaginem que todo abre é um menino
+Todo fecha é um menina
+A lógica é o seguinte:
+Passa menino, empilhar
+Passa menina, vejo o último, se é compatível
+
+Se tiver colchetes não muda
+
+[({})][()] ✅
+
+A lógica é a seguite:
+Se é abre, empilha
+Se é fecha, vejo o topo, se é compatível desempilha e faz o casal, se 
+não é compatível, deu ruim.
+No final se a pilha não estiver vazia, sobrou abre, sem fecha, e deu ruim
+
+
+========================================================
