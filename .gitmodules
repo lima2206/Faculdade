@@ -3,5 +3,5 @@
 	url = git://github.com/lima2206/Atividade_WB.git
     
 [submodule "Atv wv"]
-	path = 3° Semestre/POO/Atividade WB
-	url = git://github.com/lima2206/Atividade_WB.git
+	path = 3° Semestre/POO/atvi-wb-typescript
+	url = git://github.com/gerson-pn/atvi-wb-typescript.git
